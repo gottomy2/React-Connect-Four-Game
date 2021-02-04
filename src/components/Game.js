@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Board from './Board';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {checkWinVertical} from "../helpers";
+import {checkDraw, checkWinVertical, printBoard} from "../helpers";
 import {checkWinHorizontal} from "../helpers";
 import {checkWinDiagonal} from "../helpers";
 
@@ -21,12 +21,9 @@ const Game = () => {
         const squares = [...current];
 
         //If winner has been declared return
-        if(localStorage.getItem('winner') || squares[i]){
-            if(squares[i])
-                localStorage.setItem('draw',"Remis");
+        if(localStorage.getItem('winner')){
             return;
         }
-
 
 
         i = i%localStorage.getItem('cols') - localStorage.getItem('cols') + ((localStorage.getItem('rows')) * localStorage.getItem('cols'));
@@ -40,12 +37,14 @@ const Game = () => {
                 finished = true;
             }
         }
+
         // Put an X or an O in the first free place
         squares[i] = player1isNext ? document.getElementById(i).setAttribute("style","background-color:#D4AFB9") :
             document.getElementById(i).setAttribute("style","background-color:#7EC4CF");
 
 
-        console.log("[Current Board state]: " + current)
+        printBoard();
+        checkDraw();
         checkWinDiagonal(i);
         checkWinHorizontal(i);
         checkWinVertical(i);
@@ -58,7 +57,6 @@ const Game = () => {
         e.preventDefault()
         setHistory([Array(localStorage.getItem('rows')*localStorage.getItem('cols')).fill(null)])
     }
-
 
     const jumpTo = step => {
         setStepNumber(step);
@@ -102,9 +100,17 @@ const Game = () => {
             <div style={style2}>
                 {/*Jeśli zwycięzca został wyłoniony pokaż kto jest zwycięscą oraz zamien przycisk graj z przyciskiem zagraj ponownie.*/}
                 <p>
-                    {localStorage.getItem('winner') ? 'Koniec gry, wygrał: ' +  localStorage.getItem('winner'):
-                    ((localStorage.getItem('player1') && localStorage.getItem('player2')) ? 'Kolej Gracza: ' + (player1isNext ? localStorage.getItem('player1') : localStorage.getItem('player2')) : "")}</p>
-                {localStorage.getItem('winner') ? <button className="btn btn-warning" onClick={playAgain}>Zagraj Ponownie!</button> : render()}
+                    {
+                        (localStorage.getItem('winner')) ? 'Koniec gry, wygrał: ' +  localStorage.getItem('winner'):
+                            (localStorage.getItem("draw") ?  'Koniec gry, Gra zakończyła się remisem':
+                                ((localStorage.getItem('player1') && localStorage.getItem('player2')) ?
+                                    'Kolej Gracza: ' + (player1isNext ? localStorage.getItem('player1') : localStorage.getItem('player2')) : ""))
+                    }
+                </p>
+                {
+                    (localStorage.getItem('winner')  || localStorage.getItem("draw")) ? <button className="btn btn-warning" onClick={playAgain}>Zagraj Ponownie!</button> :
+                        render()
+                }
             </div>
         </>
     )

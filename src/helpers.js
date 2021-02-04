@@ -1,6 +1,5 @@
 const setWin = (element) =>{
     let style = element.getAttribute("style");
-    console.log("Style" + style)
     // Stylebackground-color:#D4AFB9
 
     let check = style.substr(style.indexOf(":")+1);
@@ -10,6 +9,7 @@ const setWin = (element) =>{
     else{
         localStorage.setItem('winner',localStorage.getItem("player2"));
     }
+    console.log("[GAME END] - Winner: "+ localStorage.getItem('winner'));
 }
 
 export const checkWinVertical = (id) => {
@@ -126,4 +126,32 @@ export const checkWinDiagonal = (id) => {
     if (counterRightTop === 3 || counterLeftTop === 3 || counterRightDown === 3 || counterLeftDown === 3){
         setWin(element);
     }
+}
+
+export const checkDraw = () => {
+    let count = 0;
+    for(let j=0;j<localStorage.getItem('cols');j++){
+        let style = document.getElementById(j).getAttribute("style");
+        if(style === "background-color:#D4AFB9" || style === "background-color:#7EC4CF"){
+            count++;
+        }
+    }
+    if(count == localStorage.getItem('cols')){
+        localStorage.setItem('draw',"draw")
+        console.log("[GAME END] - Draw");
+    }
+}
+
+export const printBoard = () => {
+    let board = []
+    for(let i =0 ; i < localStorage.getItem("cols") * localStorage.getItem("rows"); i ++){
+        let style = document.getElementById(i).getAttribute('style')
+        if(style === "background-color:#D4AFB9"){
+            board[i] = 1;
+        }
+        else if(style === "background-color:#7EC4CF"){
+            board[i] = 2;
+        }
+    }
+    console.log("[Current Board state]: " + board);
 }

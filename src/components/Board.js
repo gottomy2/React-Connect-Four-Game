@@ -14,7 +14,7 @@ const style = {
 
 const Board = ({ squares, onClick }) => (
     <>
-            {(localStorage.getItem("player1") && localStorage.getItem("player2") && localStorage.getItem("cols") && localStorage.getItem("rows")) ?
+            {(localStorage.getItem("player1") && localStorage.getItem("player2") && localStorage.getItem("cols") && localStorage.getItem("rows") && !localStorage.getItem("draw"))?
                 <div id="mainTable" style={style}>
                         {
                                 squares.map((square, i) => (
