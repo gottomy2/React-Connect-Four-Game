@@ -11,8 +11,6 @@ const style = {
     outline: 'none'
 };
 
-//LightPink && LightSkyBlue
-
 const Square = ({ id, value, onClick }) => (
     <button id={id} style={style} onClick={onClick}>
         {value}
