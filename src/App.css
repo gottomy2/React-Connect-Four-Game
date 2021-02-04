@@ -1,53 +1,53 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 body{
-  /*background-color: #D2F898;*/
-  background-image: url("https://wallpaperaccess.com/full/260170.png");
-  text-align: center;
+    /*background-color: #D2F898;*/
+    background-image: url("https://wallpaperaccess.com/full/260170.png");
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .plansza{
-  border: black 10px solid;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10%;
+    border: black 10px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
 
 }
 tile{
@@ -55,57 +55,57 @@ tile{
 }
 
 .hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .visible{
-  visibility: unset;
+    visibility: unset;
 }
 
 .playButton{
-  background-color: #92374D; /* Green */
-  border: none;
-  color: white;
-  border-radius: 20px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-color: #92374D; /* Green */
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .playButton2{
-  background-color: #D19C1D; /* Green */
-  border: none;
-  color: white;
-  border-radius: 20px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-color: #D19C1D; /* Green */
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 form{
-  width:50%;
-  height:50%;
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-block;
+    width:50%;
+    height:50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
 }
 
 input[type=text] {
-  width: 20%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
 input[type=text]:focus {
-  border: 3px solid #555;
-  width: 30%;
+    border: 3px solid #555;
+    width: 30%;
 }
