@@ -65,7 +65,7 @@ const Game = () => {
         return(
             <>
                 {
-                    renderMoves()
+                    localStorage.getItem('player1') && localStorage.getItem('player2') && localStorage.getItem('cols') && localStorage.getItem('rows') ? renderMoves() : ""
                 }
                 <br/>
                 <button className="btn btn-secondary" onClick={startGame}>
