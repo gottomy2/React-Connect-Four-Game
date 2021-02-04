@@ -1,16 +1,4 @@
-const setWin = (element) =>{
-    let style = element.getAttribute("style");
-    // Stylebackground-color:#D4AFB9
-
-    let check = style.substr(style.indexOf(":")+1);
-    if( check === "#D4AFB9"){
-        localStorage.setItem('winner',localStorage.getItem("player1"));
-    }
-    else{
-        localStorage.setItem('winner',localStorage.getItem("player2"));
-    }
-    console.log("[GAME END] - Winner: "+ localStorage.getItem('winner'));
-}
+import {setWin} from './helpers2';
 
 export const checkWinVertical = (id) => {
     let element = document.getElementById(id);
