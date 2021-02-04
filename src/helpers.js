@@ -48,7 +48,7 @@ export const checkWinHorizontal = (id) => {
         }
         else break;
     }
-    if (counter1 === 3 || counter2===3){
+    if (counter1 === 3 || counter2===3 || counter1+counter2 >= 3){
         setWin(element);
     }
 }
