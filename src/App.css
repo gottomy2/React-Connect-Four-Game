@@ -50,17 +50,6 @@ body{
     width: 10%;
 
 }
-tile{
-
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-.visible{
-    visibility: unset;
-}
 
 .playButton{
     background-color: #92374D; /* Green */

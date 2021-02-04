@@ -44,51 +44,6 @@ body {
   }
 }
 
-.plansza {
-  border: black 10px solid;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10%;
-}
-
-tile {}
-
-.hidden {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: unset;
-}
-
-.playButton {
-  background-color: #92374D;
-
-  /* Green */
-  border: none;
-  color: white;
-  border-radius: 20px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.playButton2 {
-  background-color: #D19C1D;
-
-  /* Green */
-  border: none;
-  color: white;
-  border-radius: 20px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
 form {
   width: 50%;
   height: 50%;
